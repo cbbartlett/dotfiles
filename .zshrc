@@ -20,11 +20,6 @@ if [ -d "$HOME/.config/emacs/bin" ] ;
   then PATH="$HOME/.config/emacs/bin:$PATH"
 fi
 
-
-if [ -d "$HOME/Applications" ] ;
-  then PATH="$HOME/Applications:$PATH"
-fi
-
 ### SETTING OTHER ENVIRONMENT VARIABLES
 if [ -z "$XDG_CONFIG_HOME" ] ; then
     export XDG_CONFIG_HOME="$HOME/.config"
@@ -111,10 +106,8 @@ up () {
   fi
 }
 
-# Vim and Emacs
+# Vim
 alias vim="nvim"
-alias em="/usr/bin/emacs -nw"
-alias emacs="emacsclient -c -a 'emacs'"
 
 # Changing "ls" to "exa"
 alias ls='exa -al --color=always --group-directories-first' # my preferred listing
@@ -142,28 +135,11 @@ alias stat='git status'  # 'status' is protected name so using 'stat' instead
 alias tag='git tag'
 alias newtag='git tag -a'
 
-# Get error messages from journalctl
-alias jctl="journalctl -p 3 -xb"
-
 # GPG Encryption
 # Verify signature for ISOs
 alias gpg-check="gpg2 --keyserver-options auto-key-retrieve --verify"
 # Receive the key of a developer
 alias gpg-retrieve="gpg2 --keyserver-options auto-key-retrieve --receive-keys"
-
-# Play audio files in current dir by type
-alias playwav='deadbeef *.wav'
-alias playogg='deadbeef *.ogg'
-alias playmp3='deadbeef *.mp3'
-alias playflac='deadbeef *.flac'
-alias playm4a='deadbeef *.m4a'
-
-# Play video files in current dir by type
-alias playavi='vlc *.avi'
-alias playmov='vlc *.mov'
-alias playmp4='vlc *.mp4'
-alias playmkv='vlc *.mkv'
-alias playwebm='vlc *.webm'
 
 # yt-dlp
 alias yta-aac="yt-dlp --extract-audio --audio-format aac "
@@ -178,6 +154,3 @@ alias ytv-best="yt-dlp -f bestvideo+bestaudio "
 
 ### SET STARSHIP PROMPT
 eval "$(starship init zsh)"
-
-### ALCRITTY COMPLETITIONS
-fpath+=${ZDOTDIR:-~}/.zsh_functions
