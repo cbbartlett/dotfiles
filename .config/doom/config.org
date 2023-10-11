@@ -53,6 +53,13 @@ This is my literate Doom Emacs config.
                                                (kbd "g <up>")    'centaur-tabs-backward-group)
 #+end_src
 
+* DASHBOARD
+Set the banner image.
+
+#+begin_src emacs-lisp
+(setq fancy-splash-image "~/.config/doom/img/Remilia.png")
+#+end_src
+
 * DIRED
 Dired is the file manager within Emacs.
 

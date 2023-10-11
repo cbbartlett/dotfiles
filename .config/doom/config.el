@@ -22,6 +22,8 @@
                                                (kbd "g <down>")  'centaur-tabs-forward-group
                                                (kbd "g <up>")    'centaur-tabs-backward-group)
 
+(setq fancy-splash-image "~/.config/doom/img/Remilia.png")
+
 (map! :leader
       (:prefix ("d" . "dired")
        :desc "Open dired" "d" #'dired
